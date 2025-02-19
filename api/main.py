@@ -92,18 +92,16 @@ def generate_bac_plot(initial_bac, safe_threshold=0.03):
 # --- calcul.py에 있는 코드 끝 ---
 
 app = FastAPI()
-# main.py가 있는 디렉토리의 상위 디렉토리를 BASE_DIR로 설정합니다.
+
+# 프로젝트 루트 디렉토리 설정 (main.py가 있는 api 폴더의 상위 디렉토리)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# public/static 폴더의 절대 경로를 지정합니다.
+# 정적 파일 경로 설정 (public/static 폴더)
 static_dir = os.path.join(BASE_DIR, "public", "static")
-
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
-# main.py가 있는 api 폴더의 상위 디렉토리(프로젝트 루트)를 BASE_DIR로 설정합니다.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 템플릿 폴더 설정 (public 폴더)
 template_dir = os.path.join(BASE_DIR, "public")
-
 templates = Jinja2Templates(directory=template_dir)
 
 @app.get("/")
