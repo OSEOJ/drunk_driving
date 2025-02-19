@@ -98,7 +98,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # public/static 폴더의 절대 경로를 지정합니다.
 static_dir = os.path.join(BASE_DIR, "public", "static")
 
-# app.mount("/static", StaticFiles(directory=static_dir), name="static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # main.py가 있는 api 폴더의 상위 디렉토리(프로젝트 루트)를 BASE_DIR로 설정합니다.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
