@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <title>잠에서 깨어도 술이 깬 건 아닙니다</title>
+  <!-- CSS 경로를 절대 경로로 지정 -->
+  <link rel="stylesheet" href="/static/style.css?v=2">
+</head>
+<body>
+  <div id="snap-container">
+    
+    <!-- Section 0: 영상과 타이틀 페이지 -->
+    <section class="snap-section" id="section0">
+      <div class="video-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+          <!-- 영상도 /static/video.mp4 형태로 불러오기 -->
+          <source src="/static/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div id="title-container" class="title-container">
+          잠에서 깨어도 술이 깬 건 아닙니다
+        </div>
+        <div class="source-text-small">
+          Source: THINK! road safety
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: 인트로 텍스트 페이지 -->
+    <section class="snap-section fade-in" id="section1">
+      <div class="intro-image">
+          <img src="/static/page1_red.png" alt="Drunk Driving Awareness">
+      </div>
+      <div class="content-container">
+          <p>
+            <strong>&nbsp;음주운전은 용납될 수 없습니다.&nbsp;</strong> <br><br>
+              그럼에도 불구하고 우리나라의 음주운전 적발건수는 1년 평균 약 13만건, 하루 평균 약 356건에 달합니다. 
+              그런데 이 중 낮 시간대 적발되는 비율은 약 18% (연평균 2만 3천건)이며, 적발 건수는 증가하는 추세를 보이고 있습니다. <br><br>
+              
+              기분 좋게 술을 마시고 자고 일어난 다음 날, 멀쩡한 것 같은 마음에 운전대를 잡은 그 누군가는 음주운전으로 적발되는 것입니다. 
+              체감 상으로 사라지는 취기와 혈중 알코올 농도 수치는 엄연히 다르다는 것을 시각화하여 오전 및<br> 낮 시간대의 숙취 운전의 위험성을 알리고, 
+              경각심을 높이기 위한 웹 페이지입니다.
+          </p>
+      </div>
+    </section>
+
+    <!-- Section 2-1: 도로 교차로 시각화 -->
+    <section class="snap-section fade-in" id="section2-2">
+      <div class="intersection-container">
+        <h1 class="intersection-text"> 2023년 하루 평균 음주운전 적발 통계 </h1>
+        <!-- 이미지도 절대 경로 /static/... -->
+        <img src="/static/intersection.png" alt="Intersection Visualization" class="intersection-img">
+      </div>
+    </section>
+
+    <!-- Section 2-2: 교차로 시각화 설명 -->
+    <section class="snap-section fade-in" id="section2-1">
+      <h2 class="subtitle-left">혈중알콜농도</h2>
+      <div class="image-container">
+        <div class="image-item">
+          <img src="/static/sedan.png" alt="Sedan">
+          <p>혈중알콜농도 &lt; 0.1</p>
+        </div>
+        <div class="image-item">
+          <img src="/static/suv.png" alt="SUV">
+          <p>0.1 ≤ 혈중알콜농도 &lt; 0.2</p>
+        </div>
+        <div class="image-item">
+          <img src="/static/truck.png" alt="Truck">
+          <p>0.2 ≤ 혈중알콜농도</p>
+        </div>
+        <div class="image-item">
+          <img src="/static/cycle.png" alt="Cycle">
+          <p>측정거부</p>
+        </div>
+      </div>
+      <h2 class="subtitle-left">성별</h2>
+      <div class="image-container">
+        <div class="image-item">
+          <img src="/static/signs1.png" alt="Male">
+          <p>남성</p>
+        </div>
+        <div class="image-item">
+          <img src="/static/signs2.png" alt="Female">
+          <p>여성</p>
+        </div>
+      </div>
+      <h2 class="subtitle-left">나이별 색상</h2>
+      <div class="age-color-guide">
+        <p><span class="color-box sandybrown"></span> 모래색: 나이 &lt; 25</p>
+        <p><span class="color-box navy"></span> 남색: 25 ≤ 나이 &lt; 35</p>
+        <p><span class="color-box light-gray"></span> 연한 회색: 35 ≤ 나이 &lt; 45</p>
+        <p><span class="color-box dark-gray"></span> 진한 회색: 45 ≤ 나이 &lt; 55</p>
+        <p><span class="color-box red"></span> 빨강색: 55 ≤ 나이 &lt; 65</p>
+        <p><span class="color-box white"></span> 흰색: 65 ≤ 나이</p>
+      </div>
+    </section>
+
+    <!-- Section 3: 음주운전으로 인한 사상자 수 -->
+    <section class="snap-section fade-in" id="section3">
+      <h2 style="text-align: center; margin-top: -15px;"> 음주운전으로 인한 사상자 수 추이 </h2>
+      <div class="chart-container">
+        <!-- FastAPI 라우트로부터 이미지를 불러오는 예 (url_for 사용) -->
+        <img src="{{ url_for('dui_chart') }}" alt="음주운전으로 인한 사상자 수">
+      </div>
+    </section>
+
+    <!-- Section 4: 장원삼 음주운전 기사 (폰트 확대 적용) -->
+    <section class="snap-section fade-in" id="section4">
+      <div class="chart-container">
+        <div class="chart">
+          <img src="/static/jangwonsam.png" alt="장원삼 사진">
+        </div>
+        <div class="chart-description">
+          <h2>장원삼 음주운전 사건</h2>
+          <p>프로야구 삼성 라이온즈 출신의 장원삼 선수는 2024년 8월 17일, 음주운전 혐의로 적발되었다.</p>
+          <p>전날 밤 음주 후 충분한 휴식을 취했다고 생각했지만, 숙취 상태에서 아침 운전 중 혈중 알코올 농도가 법적 기준을 초과한 상태로 적발되었다.</p>
+          <p>사고 당시 장원삼의 혈중알콜농도는 면허취소(0.08% 이상) 수준인 것으로 알려졌다. 이에 경찰은 장원삼을 음주운전 혐의로 입건했다.</p>
+          <p>장원삼은 "사고 당일 음주를 한 것은 아니지만 숙취가 남아 있었다면 운전을 하지 말았어야 했는데 수면도 충분히 했으니 괜찮겠다는 안일한 생각으로 운전대를 잡고 사고를 냈다"고 설명했다.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section 5: 좌측 입력폼, 우측 그래프 - 같은 크기 박스 -->
+    <section class="snap-section fade-in" id="section5">
+      <h1>맞춤형 혈중 알코올 농도 입력 및 결과</h1>
+      <div class="content-wrapper">
+        <!-- 왼쪽 입력폼 박스 -->
+        <div class="input-column">
+          <div id="inputContainer" class="form-wrapper">
+            <div id="formContent">
+              <form id="userInputForm">
+                <div class="form-group gender-group">
+                  <label class="form-label">성별:</label>
+                  <label class="radio-label">
+                    <input type="radio" name="gender" value="male" id="gender_male" checked>
+                    남자
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="gender" value="female" id="gender_female">
+                    여자
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label for="bodyWeight" class="form-label">체중 (kg):</label>
+                  <input type="number" id="bodyWeight" name="bodyWeight" placeholder="예: 70" required>
+                </div>
+                <div class="form-group">
+                  <label for="hours" class="form-label">음주 후 경과 시간 (시간):</label>
+                  <input type="number" id="hours" name="hours" placeholder="예: 2" required>
+                </div>
+                <div class="form-group">
+                  <h3 class="form-section-title">섭취 횟수 입력<br>(소주, 맥주, 막걸리는 병수 / 양주, 와인은 잔수)</h3>
+                  <div class="alcohol-input-group">
+                    <label for="soju" class="alcohol-label">소주 (360ml):</label>
+                    <input type="number" id="soju" name="soju" value="0" min="0">
+                  </div>
+                  <div class="alcohol-input-group">
+                    <label for="beer" class="alcohol-label">맥주 (500ml):</label>
+                    <input type="number" id="beer" name="beer" value="0" min="0">
+                  </div>
+                  <div class="alcohol-input-group">
+                    <label for="makgeolli" class="alcohol-label">막걸리 (300ml):</label>
+                    <input type="number" id="makgeolli" name="makgeolli" value="0" min="0">
+                  </div>
+                  <div class="alcohol-input-group">
+                    <label for="whiskey" class="alcohol-label">양주 (30ml, 잔수):</label>
+                    <input type="number" id="whiskey" name="whiskey" value="0" min="0">
+                  </div>
+                  <div class="alcohol-input-group">
+                    <label for="wine" class="alcohol-label">와인 (150ml, 잔수):</label>
+                    <input type="number" id="wine" name="wine" value="0" min="0">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="submit-container">
+              <button type="submit" form="userInputForm">수치 입력후 Enter키를 눌러주세요</button>
+            </div>
+          </div>
+        </div>
+        <!-- 오른쪽 그래프 박스 -->
+        <div class="graph-column">
+          <div id="graphContainer"></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section 6: 연도별 그래프 (가로 배열) -->
+    <section class="snap-section fade-in" id="section6">
+      <h2 class="section6-title">낮 시간 음주운전 단속 건수 변화 (토요일 기준)</h2>
+      <div class="graph-row">
+        <div class="graph-item">
+          <div class="graph-label">2021</div>
+          <img src="/static/2021_6.png" alt="2021년 그래프" class="year-graph">
+        </div>
+        <div class="graph-item">
+          <div class="graph-label">2022</div>
+          <img src="/static/2022_6.png" alt="2022년 그래프" class="year-graph">
+        </div>
+        <div class="graph-item">
+          <div class="graph-label">2023</div>
+          <img src="/static/2023_6.png" alt="2023년 그래프" class="year-graph">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section 7: 중앙 텍스트 페이지 -->
+    <section class="snap-section fade-in" id="section7">
+      <div class="center-text">
+        음주운전은 기본적으로 혈중 알코올 농도가 일정 수치 이상인 상태로 운전하는 것이지<br>
+        언제 술을 마셨는지가 중요한 것이 아니다.<br>
+        -Team 6-
+      </div>
+    </section>
+    
+    <!-- Section 8: 히스토그램 -->
+    <section class="snap-section fade-in" id="section8">
+      <div class="histogram-container">
+        <div class="histogram-caption">
+          2021~2023년 총 음주운전 사고 건수 변화 (5 AM - 5 PM 기준)
+        </div>
+        <img src="/static/histogram.png" alt="히스토그램" class="histogram-img">
+      </div>
+    </section>
+    
+    <!-- Section 9: 광고 배너 -->
+    <section class="snap-section fade-in" id="section9">
+      <div class="banner-container">
+        <div class="banner-text">
+          <h2>안전한 귀가, 지금 바로 대리운전을 이용하세요!</h2>
+          <p>숙취해소제와 함께 안전하게 집으로 돌아가세요. 자세한 내용은 클릭하세요!</p>
+          <a href="https://example.com" target="_blank" class="banner-link">자세히 보기</a>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+  <!-- JS 경로도 절대 경로로 지정 -->
+  <script src="/static/script.js"></script>
+</body>
+</html>

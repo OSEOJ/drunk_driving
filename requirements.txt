@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+openpyxl
+jinja2
+matplotlib
+numpy
+python-multipart
+xlrd

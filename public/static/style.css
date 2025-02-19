@@ -1,0 +1,685 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#snap-container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Page 1 */
+.video-container {
+  position: relative;
+  height: auto;
+  text-align: center;
+}
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,1) 0%,  
+    rgba(0,0,0,0.8) 10%, 
+    rgba(0,0,0,0.5) 25%, 
+    rgba(0,0,0,0.2) 40%, 
+    rgba(0,0,0,0) 50%, 
+    rgba(0,0,0,0) 60%, 
+    rgba(0,0,0,0.2) 75%, 
+    rgba(0,0,0,0.5) 85%, 
+    rgba(0,0,0,0.8) 95%, 
+    rgba(0,0,0,1) 100%
+  );
+}
+.title-container {
+  position: absolute;
+  bottom: 25%;
+  left: 50px;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 15px;
+}
+.source-text-small {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: white;
+}
+/* Page 1 */
+
+
+
+
+
+/* Page 2 */
+.snap-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+.intro-image {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: -150px;
+}
+.intro-image img {
+  width: 20%;
+  height: auto;
+}
+.content-container {
+  max-width: 900px;
+  line-height: 1.75;
+  font-size: 20px;
+  text-align: center;
+}
+.content-container strong {
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(255, 0, 0, 0.6);
+}
+/* Page 2 */
+
+
+
+
+
+
+
+/* Page 3 */
+.intersection-container {
+  width: 80vw;
+  height: 80vh;
+}
+.intersection-img {
+  width: 60%;
+  border-radius: 25px;
+}
+.intersection-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* Page 3 */
+
+
+
+
+
+
+/* Page 4 */
+.subtitle-left {
+  text-align: left;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 0 60%;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.image-item {
+  text-align: center;
+}
+.image-item img[alt="Sedan"] {
+  width: 70px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 32px;
+}
+.image-item img[alt="SUV"] {
+  width: 70px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.image-item img[alt="Truck"] {
+  width: 90px;
+  height: auto;
+  margin-bottom: 0px;
+}
+.image-item img[alt="Cycle"] {
+  width: 60px;
+  height: auto;
+  margin-top: 33px;
+  margin-bottom: 33px;
+  margin-left: 30px;
+}
+.image-item p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.image-item img[alt="Cycle"] + p,
+.image-item img[alt="Cycle"] + p + p {
+  position: relative;
+  left: 15px;
+}
+.image-item img[alt="Male"],
+.image-item img[alt="Female"] {
+  width: 120px;
+  height: auto;
+}
+.age-color-guide {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+.color-box {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  border: 0px white #ffffff;
+}
+.sandybrown { background-color: sandybrown; }
+.navy { background-color: navy; }
+.light-gray { background-color: lightgray; }
+.dark-gray { background-color: gray; }
+.red { background-color: red; }
+.white { background-color: white; border: 1px solid black; }
+/* Page 4 */
+
+
+
+
+
+
+
+
+
+/* Page 5 */
+.chart-container img {
+  width: 350%;
+  border-radius: 15px;
+  margin-top: -40px;
+}
+/* Page 5 */
+
+
+
+
+/* 페이드인 효과 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* Section 4: 장원삼 음주운전 기사 폰트 크기 확대 */
+.chart-description h2 {
+  font-size: 32px;
+  margin-top: -20px;
+}
+.chart-description p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Page 5: 입력 폼 관련 (기존 유지) */
+.form-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#inputContainer {
+  width: 100%;
+  max-height: 90vh;
+  overflow: visible;
+}
+#formContent {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.radio-label {
+  font-size: 16px;
+}
+.form-section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-align: center;
+}
+.alcohol-input-group {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.alcohol-label {
+  width: 150px;
+  font-weight: bold;
+}
+
+/* Section Output: 결과 페이지 스타일 (기존) */
+#graphContainer {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+#graphContainer h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+#graphContainer p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+#graphContainer ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+#graphContainer img {
+  display: block;
+  margin: 20px auto 0;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.penalty-display {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  margin-top: 15px;
+}
+
+/* 반환 버튼 스타일 */
+.return-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+.return-button-container button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 동적 주류 상세 정보 블록 */
+.beverage-block {
+  background-color: #2b2b2b;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.beverage-block h3 {
+  margin-bottom: 10px;
+}
+.beverage-block .volume-input > div {
+  margin-top: 5px;
+}
+input[type="checkbox"] {
+  accent-color: white;
+}
+.submit-container {
+  position: sticky;
+  bottom: 0;
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  z-index: 10;
+}
+.submit-container button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 서브타이틀 왼쪽 정렬 */
+.subtitle-left {
+  text-align: left;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 0 60%;
+}
+.age-color-guide {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.image-item {
+  text-align: center;
+}
+.image-item img {
+  width: 70px;
+  height: auto;
+}
+.image-item img[alt="Male"],
+.image-item img[alt="Female"] {
+  width: 120px;
+  height: auto;
+}
+.age-color-guide p {
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+} 
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+.brown { background-color: brown; }
+.navy { background-color: navy; }
+.light-gray { background-color: lightgray; }
+.dark-gray { background-color: gray; }
+.red { background-color: red; }
+.white { background-color: white; border: 1px solid black; }
+
+/* 도로 교차로 중앙 정렬 */
+.intersection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+.intersection-img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+.intersection-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 차트 섹션 */
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 10%;
+}
+.chart img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+.chart {
+  margin: 0 50px;
+}
+.chart-description {
+  max-width: 600px;
+}
+
+/* Section 6: 연도별 그래프 가로 배열 - 동일 크기 & 레이블 중앙정렬 */
+#section6 .section6-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+#section6 .graph-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#section6 .graph-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* 이미지 영역을 동일 크기로 지정 (예: 240x240) */
+.year-graph {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  border: 1px solid #ccc; /* 보더(선택) */
+  border-radius: 10px;    /* 모서리 둥글게(선택) */
+  background-color: #fff; /* 배경색(선택) */
+}
+.graph-label {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Section 7: 중앙 텍스트 페이지 */
+#section7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#section7 .center-text {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* Section 8: 광고 배너 (기존) */
+.banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  padding: 20px;
+}
+.banner-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.banner-text {
+  color: #fff;
+  text-align: center;
+  max-width: 600px;
+}
+.banner-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.banner-text p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.banner-link {
+  display: inline-block;
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.banner-link:hover {
+  background-color: #e65c00;
+}
+
+/* Section 8: 히스토그램 */
+.histogram-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;       /* 페이지가 너무 꽉 차지 않도록 최대 너비 설정 */
+  margin: 0 auto;         /* 가운데 정렬 */
+  gap: 20px;              /* 이미지와 캡션 사이 간격 */
+}
+.histogram-img {
+  width: 100%;
+  max-width: 600px;       /* 이미지가 너무 커지지 않도록 제한 */
+  border: 5px solid #fff; /* 선택: 테두리 */
+  border-radius: 10px;    /* 선택: 모서리 둥글게 */
+}
+.histogram-caption {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 600px;       /* 캡션도 이미지와 동일 너비로 제한 */
+  margin: 0 auto;
+}
+
+#section6 .graph-label {
+  order: -1;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #fff;
+}
+/* 섹션8 히스토그램 캡션: 이미지 위 중앙정렬 */
+#section8 .histogram-caption {
+  order: -1;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+#section6 .graph-label {
+  order: -1;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #fff;
+}
+/* 섹션8 히스토그램 캡션: 이미지 위 중앙정렬 */
+#section8 .histogram-caption {
+  order: -1;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* Section 5: 입력폼 + 그래프를 같은 폭 박스로, 가운데 여백 */
+#section5 .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;             /* 가운데 짧은 여백 */
+  width: 90%;
+  max-width: 1280px;    /* 화면 너무 넓어지지 않도록 */
+  margin: 0 auto;
+  padding: 20px 0;      /* 위아래 여백 */
+}
+
+/* 왼쪽(입력폼), 오른쪽(그래프) 각각 동일 폭(600px) 박스 */
+#section5 .graph-column {
+  width: 475px;                 
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 그래프 결과 박스 (#graphContainer) - 기존 흰 배경 유지 */
+#graphContainer {
+  display: none;                /* JS에서 결과 나오면 block */
+  width: 100%;                  /* 오른쪽 박스 내부를 꽉 채움 */
+  background: #fff;             /* 결과 박스는 흰색 배경 */
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto 0;          /* 위쪽 조금 띄우고, 가운데 정렬 */
+  box-sizing: border-box;
+}
